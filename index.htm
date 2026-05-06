@@ -1,4 +1,4 @@
-<title>Portal de Links da Secretaria Escolar - EEEFM José Teixeira Fialho</title>
+<title>Portal de Serviços - EEEFM José Teixeira Fialho</title>
 <link rel="icon" type="image/x-icon" href="Portal/jtf.ico">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -6,28 +6,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 <style>
-    :root {
-        --deep-navy: #000814;
-        --navy-blue: #001d3d;
-        --highlight-blue: #003566;
-        --accent-color: #4cc9f0; /* Turquesa suave */
-        --accent-hover: #4361ee; /* Azul vibrante para hover */
-        --text-light: #f8f9fa;
-    }
-
     body {
         width: 100%;
         height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         overflow: hidden;
-        background-color: var(--deep-navy);
-        margin: 0;
+        background-color: #001219;
     }
 
-    /* FUNDO ANIMADO EM TONS DE AZUL MARINHO */
     .animated-bg {
         position: fixed;
         top: 0;
@@ -36,179 +25,159 @@
         height: 100%;
         z-index: -1;
         background-image: 
-            radial-gradient(at 0% 0%, #000814 0px, transparent 50%),
-            radial-gradient(at 50% 0%, #001d3d 0px, transparent 50%),
-            radial-gradient(at 100% 0%, #003566 0px, transparent 50%),
-            radial-gradient(at 0% 50%, #001d3d 0px, transparent 50%),
-            radial-gradient(at 100% 50%, #000814 0px, transparent 50%),
-            radial-gradient(at 0% 100%, #003566 0px, transparent 50%),
-            radial-gradient(at 100% 100%, #001d3d 0px, transparent 50%);
-        background-size: 150% 150%;
-        animation: liquid-movement 15s ease infinite alternate;
+            radial-gradient(at 0% 0%, hsla(220, 100%, 15%, 1) 0px, transparent 50%),   /* Oxford Blue */
+            radial-gradient(at 50% 0%, hsla(230, 80%, 20%, 1) 0px, transparent 50%),   /* Navy Blue */
+            radial-gradient(at 100% 0%, hsla(215, 60%, 25%, 1) 0px, transparent 50%),  /* Deep Royal */
+            radial-gradient(at 0% 50%, hsla(225, 70%, 10%, 1) 0px, transparent 50%),   /* Midnight Blue */
+            radial-gradient(at 100% 50%, hsla(210, 50%, 30%, 1) 0px, transparent 50%), /* Steel Blue */
+            radial-gradient(at 0% 100%, hsla(235, 90%, 12%, 1) 0px, transparent 50%),  /* Dark Navy */
+            radial-gradient(at 0% 100%, hsla(220, 90%, 12%, 1) 0px, transparent 50%);
+            background-size: 150% 150%;
+            animation: liquid-movement 15s ease infinite alternate;
     }
 
     @keyframes liquid-movement {
-        0% { background-position: 0% 0%; }
-        50% { background-position: 100% 100%; }
-        100% { background-position: 50% 50%; }
+        0% { background-position: 0% 0%; filter: hue-rotate(0deg); }
+        33% { background-position: 100% 20%; }
+        66% { background-position: 20% 100%; filter: hue-rotate(100deg); }
+        100% { background-position: 50% 50%; filter: hue-rotate(0deg); }
     }
 
     .glass-card {
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
         border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 25px;
+        border-radius: 20px;
         padding: 40px;
-        color: var(--text-light);
+        color: white;
         text-align: center;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
         max-width: 880px;
         transform: scale(0.98);
-        transition: all 0.4s ease;
+        transition: transform 0.2s ease-in-out;
+        background: rgba(255, 255, 255, 0.2);
     }
 
     .glass-card:hover {
         transform: scale(1);
-        background: rgba(255, 255, 255, 0.06);
-        border-color: rgba(76, 201, 240, 0.3);
     }
 
-    h1 { 
-        margin-bottom: 20px; 
-        font-weight: 200; 
-        letter-spacing: 5px; 
-        text-transform: uppercase;
-        color: var(--accent-color);
-    }
-
+    h1 { margin-bottom: 10px; font-weight: 300; letter-spacing: 3px; }
+    p { opacity: 0.8; font-weight: 300; }
     a { text-decoration: none; }
-    
-    /* Logo Principal */
-    .main-logo { 
-        border-radius: 12px; 
-        height: 120px; 
-        margin-bottom: 10px;
-        filter: drop-shadow(0 0 10px rgba(76, 201, 240, 0.2));
-    }
-
-    /* Ícones do rodapé */
-    #cards img {
-        width: 70px; 
-        height: 70px;
-        margin: 5px;
-        transition: transform 0.3s ease;
-        border: 2px solid rgba(255, 255, 255, 0.1);
-    }
-    
+    img { border-radius: 8px; height: 139px; }
+    #cards img {width: 80px; height: 80px;}
     #cards img:hover {
-        transform: translateY(-5px);
-        border-color: var(--accent-color);
-        animation: tremidinho 0.2s;
+        cursor: pointer;
+        animation: tremidinho 0.2s ;
     }
 
     @keyframes tremidinho {
-        0% { transform: translateY(-5px) rotate(0deg); }
-        25% { transform: translateY(-5px) rotate(-1deg); }
-        75% { transform: translateY(-5px) rotate(1deg); }
-        100% { transform: translateY(-5px) rotate(0deg); }
+        0% { transform: translateX(0); }
+        25% { transform: translateX(-2px) rotate(-1deg); }
+        50% { transform: translateX(2px) rotate(1deg); }
+        75% { transform: translateX(-2px) rotate(-1deg); }
+        100% { transform: translateX(0); }
     }
 
     #links {
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap:wrap;
         justify-content: center;
-        gap: 12px;
-        max-width: 750px;
+        gap: 10px;
+        max-width: 700px;
         margin: 0 auto;
     }
 
-    .btnStack {
-        font-family: "Montserrat", sans-serif;
-        background-color: rgba(76, 201, 240, 0.15);
-        color: var(--text-light);
+    #links a, #links button {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        padding: 10px 20px;
+        padding: 10px ;
+        white-space: nowrap;
+        flex: 0 1 auto;
+        background-color: #7fffd4; 
+        border-radius: 5px;
+        text-decoration: none;
+        color: #000;
         font-size: 14px;
-        font-weight: 400;
+        padding-inline: 25px;
+    }
+
+    .btnStack {
+        font-family: "Montserrat", serif;
+        background-color: Aquamarine;
+        color: #000;
+        display: inline-block;
+        padding: 6px 12px;
+        font-size: 18px;
         cursor: pointer;
-        border: 1px solid rgba(76, 201, 240, 0.3);
-        border-radius: 8px;
-        transition: all 0.3s ease;
-        backdrop-filter: blur(5px);
+        border: 1px solid transparent;
+        border-radius: 4px;
+        margin-top: 5px;
+        margin-left: 3px;
     }
     
-    .btnStack:hover { 
-        background-color: var(--accent-color); 
-        color: var(--navy-blue); 
-        font-weight: 600;
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(76, 201, 240, 0.3);
-    }
+    a.btnStack:hover { background-color: DarkSlateGray; color: white; }
 
-    /* PESQUISA GOOGLE HARMONIZADA */
-    .google-search-container {
-        max-width: 600px;
-        margin: 25px auto;
-    }
-    .google-search-container form {
-        display: flex;
-        gap: 10px;
-    }
-    .google-search-container input[type="text"] {
-        flex-grow: 1;
-        padding: 12px 15px;
-        border-radius: 8px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        background: rgba(0, 0, 0, 0.2);
-        color: white;
-        outline: none;
-        font-size: 15px;
-    }
-    .google-search-container input[type="submit"] {
-        background-color: var(--accent-color);
-        color: var(--navy-blue);
-        border: none;
-        padding: 10px 25px;
-        border-radius: 8px;
-        cursor: pointer;
-        font-weight: 700;
-        transition: 0.3s;
-    }
-    .google-search-container input[type="submit"]:hover {
-        background-color: white;
-    }
-
-    /* BOTÃO AGENDA - FOCO HARMONIZADO */
+    /* ESTILO DO BOTÃO DE AGENDA COM ANIMAÇÃO */
     .btn-agenda {
         display: block;
-        width: 100%;
-        margin-top: 25px;
-        padding: 18px;
+        width: 80%;
+        margin: 20px auto 0;
+        padding: 15px;
         font-family: "Montserrat", sans-serif;
-        font-size: 18px;
-        font-weight: 700;
+        font-size: 20px;
+        font-weight: bold;
         text-transform: uppercase;
-        letter-spacing: 2px;
-        color: var(--navy-blue);
-        background-color: var(--accent-color);
-        border-radius: 12px;
-        animation: pulse-highlight 3s infinite;
+        color: #000;
+        background-color: #7fffd4;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(127, 255, 212, 0.5);
+        animation: pulse-highlight 2s infinite;
         transition: all 0.3s ease;
     }
 
     @keyframes pulse-highlight {
-        0% { box-shadow: 0 0 0px rgba(76, 201, 240, 0.4); }
-        50% { box-shadow: 0 0 25px rgba(76, 201, 240, 0.7); filter: brightness(1.1); }
-        100% { box-shadow: 0 0 0px rgba(76, 201, 240, 0.4); }
+        0% { transform: scale(1); box-shadow: 0 0 0px rgba(127, 255, 212, 0.7); }
+        50% { transform: scale(1.05); box-shadow: 0 0 25px rgba(127, 255, 212, 1); background-color: #fff; }
+        100% { transform: scale(1); box-shadow: 0 0 0px rgba(127, 255, 212, 0.7); }
     }
 
     .btn-agenda:hover {
-        background-color: white;
-        transform: scale(1.02);
-        animation: none;
+        background-color: #001219;
+        color: #7fffd4;
+        animation: none; /* Para a animação ao passar o mouse para facilitar o clique */
+    }
+
+    /* ESTILO DA PESQUISA GOOGLE */
+    .google-search-container {
+        max-width: 570px;
+        margin-top: 15px;
+    }
+    .google-search-container form {
+        display: flex;
+        gap: 5px;
+        opacity: 0.8;
+    }
+    .google-search-container input[type="text"] {
+        flex-grow: 1;
+        padding: 10px;
+        border-radius: 4px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+    }
+    .google-search-container input[type="submit"] {
+        font-family: "Montserrat", serif;
+        background-color: Aquamarine;
+        color: rgb(8, 8, 8);
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
     }
 </style>
 
@@ -216,27 +185,30 @@
     <div class="animated-bg"></div>
 
     <div class="glass-card">
-        <img src="Portal/jtf.png" class="main-logo">
+        <img src="Portal/jtf.png">
+        <br/>
 
         <h1>Buscador Fialho</h1>
         
         <div id="links">
             <a href="https://joseteixeirafialho.blogspot.com/" class="btnStack" target="_blank">SiteBlog Escolar</a>
-            <a href="https://docs.google.com/spreadsheets/d/1kPDRA-zyxlJGegFMbEOEURGdzwIBF0IL" class="btnStack" target="_blank">Expedição de Documentos</a>
-            <a href="https://docs.google.com/spreadsheets/d/12dGX4ISn_lAdwPB5P48KU73GmUTR5u_r" class="btnStack" target="_blank">Auditoria de Prontuários</a>          
+            <a href="https://docs.google.com/spreadsheets/d/1kPDRA-zyxlJGegFMbEOEURGdzwIBF0IL" class="btnStack" target="_blank">Controle de Expedição de Documentos Escolares</a>
+            <a href="https://docs.google.com/spreadsheets/d/12dGX4ISn_lAdwPB5P48KU73GmUTR5u_r" class="btnStack" target="_blank">&nbsp;Auditoria Interna de Prontuários&nbsp;</a>          
             <a href="https://drive.google.com/drive/folders/1ES658SYhS11mH8ySnpDycrvq0D5vDD0O" class="btnStack" target="_blank">Regulação</a>          
-            <a href="https://educadorseduesgov-my.sharepoint.com/?id=%2Fpersonal%2Fescolajoseteixeira%5Fsedu%5Fes%5Fgov%5Fbr%2FDocuments%2FSECRETARIA" class="btnStack" target="_blank">OneDrive</a>
-            <a href="https://drive.google.com/drive/folders/1TBoiHW6VCP0AQ1RsimGLTJj114YWERvw?usp=drive_link" class="btnStack" target="_blank">Calendário e Curriculares</a>
-            <a href="https://acessocidadao.es.gov.br/" class="btnStack" target="_blank">Acesso Cidadão</a>
-            <a href="https://juniorcriste.github.io/Buscador-de-Prontuarios/" class="btnStack" target="_blank" style="width: 100%;">CONSULTAR ARQUIVO INATIVO ESCOLAR</a>
+            <a href="https://educadorseduesgov-my.sharepoint.com/?id=%2Fpersonal%2Fescolajoseteixeira%5Fsedu%5Fes%5Fgov%5Fbr%2FDocuments%2FSECRETARIA" class="btnStack" target="_blank"> &nbsp;&nbsp;OneDrive&nbsp;&nbsp; </a>
+            <a href="https://drive.google.com/drive/folders/1TBoiHW6VCP0AQ1RsimGLTJj114YWERvw?usp=drive_link" class="btnStack" target="_blank"> &nbsp;Calendário e Organizações Curriculares&nbsp; </a>
+            <a href="https://acessocidadao.es.gov.br/" class="btnStack" target="_blank"> Serviços Acesso Cidadão</a>
+            <a href="https://juniorcriste.github.io/Buscador-de-Prontuarios/" class="btnStack" target="_blank" style="width: 74%; margin-bottom: 10px;">CONSULTAR ARQUIVO INATIVO ESCOLAR</a>
         </div>
 
-        <div class="google-search-container">
-            <form action="https://www.google.com/search" method="GET" target="_blank">
-                <input type="text" name="q" placeholder="Pesquisar no Google..." required>
-                <input type="submit" value="PESQUISAR">
-            </form>
-        </div>
+        <center>
+            <div class="google-search-container">
+                <form action="https://www.google.com/search" method="GET" target="_blank">
+                    <input type="text" name="q" placeholder="Pesquisar no Google..." required>
+                    <input type="submit" value="Pesquisar">
+                </form>
+            </div>
+        </center>
 
         <div id="cards">
             <a href="https://e-docs.es.gov.br/Internal" target="_blank"><img src="Portal/edocs.png"> </a>
@@ -248,6 +220,7 @@
             <a href="https://sispddeinterativo.mec.gov.br/" target="_blank"><img src="Portal/pdde.png"> </a>
         </div>
 
+        <!-- NOVO BOTÃO ADICIONADO AQUI -->
         <a href="https://calendar.google.com/calendar" target="_blank" class="btn-agenda">Agenda de Compromissos</a>
         
     </div>

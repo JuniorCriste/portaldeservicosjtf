@@ -17,32 +17,34 @@
         background-color: #001219;
     }
 
-    .animated-bg {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        background-image: 
-        radial-gradient(circle at 0% 0%, hsla(220, 100%, 15%, 1) 0%, transparent 50%),
-        radial-gradient(circle at 50% 0%, hsla(230, 80%, 20%, 1) 0%, transparent 50%),
-        radial-gradient(circle at 100% 0%, hsla(210, 60%, 25%, 1) 0%, transparent 50%),
-        radial-gradient(circle at 0% 50%, hsla(225, 70%, 10%, 1) 0%, transparent 50%),
-        radial-gradient(circle at 100% 50%, hsla(215, 50%, 30%, 1) 0%, transparent 50%),
-        radial-gradient(circle at 0% 100%, hsla(235, 90%, 12%, 1) 0%, transparent 50%),
-        radial-gradient(circle at 100% 100%, hsla(220, 40%, 20%, 1) 0%, transparent 50%);
-    
-    background-size: 150% 150%;
-    animation: liquid-movement 15s ease infinite alternate;
-    }
+.animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            /* Paleta: Navy Blue, Oxford Blue e Midnight Blue */
+            background-image: 
+                radial-gradient(circle at 0% 0%, hsla(220, 100%, 15%, 1) 0%, transparent 50%),
+                radial-gradient(circle at 50% 0%, hsla(230, 80%, 20%, 1) 0%, transparent 50%),
+                radial-gradient(circle at 100% 0%, hsla(210, 60%, 25%, 1) 0%, transparent 50%),
+                radial-gradient(circle at 0% 50%, hsla(225, 70%, 10%, 1) 0%, transparent 50%),
+                radial-gradient(circle at 100% 50%, hsla(215, 50%, 30%, 1) 0%, transparent 50%),
+                radial-gradient(circle at 0% 100%, hsla(235, 90%, 12%, 1) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, hsla(220, 40%, 20%, 1) 0%, transparent 50%);
+            
+            background-size: 150% 150%;
+            animation: liquid-movement 15s ease infinite alternate;
+        }
 
-    @keyframes liquid-movement {
-        0% { background-position: 0% 0%; filter: hue-rotate(0deg); }
-        33% { background-position: 100% 20%; }
-        66% { background-position: 20% 100%; filter: hue-rotate(100deg); }
-        100% { background-position: 50% 50%; filter: hue-rotate(0deg); }
-    }
+        /* Animação apenas de posição para evitar mudanças de cor não desejadas */
+        @keyframes liquid-movement {
+            0% { background-position: 0% 0%; }
+            33% { background-position: 100% 20%; }
+            66% { background-position: 20% 100%; }
+            100% { background-position: 50% 50%; }
+        }
 
     .glass-card {
         background: rgba(255, 255, 255, 0.05);

@@ -1,0 +1,201 @@
+<title>Portal de Links da Secretaria Escolar - EEEFM José Teixeira Fialho</title>
+<link rel="icon" type="image/x-icon" href="00. IDENTIDADE VISUAL/EDITADOS/Portal/jtf.ico">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        overflow: hidden;
+        background-color: #001219;
+    }
+
+    .animated-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-image: 
+            radial-gradient(at 0% 0%, hsla(200, 100%, 25%, 1) 0px, transparent 50%),
+            radial-gradient(at 50% 0%, hsla(220, 80%, 30%, 1) 0px, transparent 50%),
+            radial-gradient(at 100% 0%, hsla(180, 100%, 20%, 1) 0px, transparent 50%),
+            radial-gradient(at 0% 50%, hsla(240, 60%, 35%, 1) 0px, transparent 50%),
+            radial-gradient(at 100% 50%, hsla(190, 90%, 40%, 1) 0px, transparent 50%),
+            radial-gradient(at 0% 100%, hsla(210, 100%, 15%, 1) 0px, transparent 50%),
+            radial-gradient(at 100% 100%, hsla(160, 100%, 30%, 1) 0px, transparent 50%);
+        background-size: 150% 150%;
+        animation: liquid-movement 15s ease infinite alternate;
+    }
+
+    @keyframes liquid-movement {
+        0% { background-position: 0% 0%; filter: hue-rotate(0deg); }
+        33% { background-position: 100% 20%; }
+        66% { background-position: 20% 100%; filter: hue-rotate(100deg); }
+        100% { background-position: 50% 50%; filter: hue-rotate(0deg); }
+    }
+
+    .glass-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 40px;
+        color: white;
+        text-align: center;
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        max-width: 880px;
+
+        /* Define o tamanho inicial como 75% */
+  transform: scale(0.98);
+  
+  /* Adiciona uma transição suave de 0.3 segundos */
+  transition: transform 0.2s ease-in-out;
+  
+  /* Estilos opcionais para o efeito glassmorphism */
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .glass-card:hover {
+  /* Aumenta para 80% quando o mouse passar por cima */
+  transform: scale(1);
+}
+
+    h1 { margin-bottom: 10px; font-weight: 300; letter-spacing: 3px; }
+    p { opacity: 0.8; font-weight: 300; }
+    a { text-decoration: none; }
+    img { border-radius: 8px; height: 139px; }
+    #cards img:hover {
+  cursor: pointer;
+  /* Chama a animação 'tremidinho' que dura 0.2 segundos e se repete infinitamente enquanto o mouse estiver em cima */
+  animation: tremidinho 0.2s ;
+}
+
+/* Definição do movimento */
+@keyframes tremidinho {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-2px) rotate(-1deg); }
+  50% { transform: translateX(2px) rotate(1deg); }
+  75% { transform: translateX(-2px) rotate(-1deg); }
+  100% { transform: translateX(0); }
+}
+#links {
+  display: flex;
+  flex-wrap:wrap;         /* Permite múltiplos links por linha */
+  justify-content: center; /* Centraliza o bloco resultante */
+  gap: 10px;                /* Espaçamento entre os botões */
+  max-width: 700px;        /* Limita a largura da div */
+  margin: 0 auto;          /* Centraliza a div na tela, se desejar */
+}
+
+#links a, #links button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px ;      /* Espaçamento interno fixo */
+  white-space: nowrap;     /* Impede que o texto de um link quebre em 2 linhas */
+  flex: 0 1 auto;          /* Ocupa apenas o espaço necessário do texto */
+  background-color: #7fffd4; 
+  border-radius: 5px;
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  padding-inline: 25px;
+}
+
+    .btnStack {
+        font-family: "Montserrat", serif;
+        background-color: Aquamarine;
+        color: #000;
+        display: inline-block;
+        padding: 6px 12px;
+        font-size: 18px;
+        cursor: pointer;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        margin-top: 5px;
+        margin-left: 3px;
+    }
+    
+    a.btnStack:hover { background-color: DarkSlateGray; color: white; }
+
+    /* ESTILO DA PESQUISA GOOGLE */
+    .google-search-container {
+        max-width: 570px;
+    }
+    .google-search-container form {
+        display: flex;
+        gap: 5px;
+        opacity: 0.8;
+    }
+    .google-search-container input[type="text"] {
+        flex-grow: 1;
+        padding: 10px;
+        border-radius: 4px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+    }
+    .google-search-container input[type="submit"] {
+        font-family: "Montserrat", serif;
+        background-color: Aquamarine;
+        color: rgb(8, 8, 8);
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+</style>
+
+<body>
+    <div class="animated-bg"></div>
+
+    <div class="glass-card">
+        <img src="00. IDENTIDADE VISUAL/EDITADOS/Portal/jtf.png">
+        <br/>
+
+        <h1>Buscador Fialho</h1>
+        
+        <div id="links">
+            <a href="https://joseteixeirafialho.blogspot.com/" class="btnStack" target="_blank">SiteBlog Escolar</a>
+            <a href="https://docs.google.com/spreadsheets/d/1kPDRA-zyxlJGegFMbEOEURGdzwIBF0IL" class="btnStack" target="_blank">Controle de Expedição de Documentos Escolares</a>
+            <a href="https://docs.google.com/spreadsheets/d/12dGX4ISn_lAdwPB5P48KU73GmUTR5u_r" class="btnStack" target="_blank">&nbsp;Auditoria Interna de Prontuários&nbsp;</a>          
+            <a href="https://drive.google.com/drive/folders/1ES658SYhS11mH8ySnpDycrvq0D5vDD0O" class="btnStack" target="_blank">Regulação</a>          
+            <a href="https://educadorseduesgov-my.sharepoint.com/?id=%2Fpersonal%2Fescolajoseteixeira%5Fsedu%5Fes%5Fgov%5Fbr%2FDocuments%2FSECRETARIA" class="btnStack" target="_blank"> &nbsp;&nbsp;OneDrive&nbsp;&nbsp; </a>
+            <a href="https://drive.google.com/drive/folders/1TBoiHW6VCP0AQ1RsimGLTJj114YWERvw?usp=drive_link" class="btnStack" target="_blank"> &nbsp;Calendário e Organizações Curriculares&nbsp; </a>
+            <a href="https://acessocidadao.es.gov.br/" class="btnStack" target="_blank"> Serviços Acesso Cidadão</a>
+            <a href="https://juniorcriste.github.io/Buscador-de-Prontuarios/" class="btnStack" target="_blank" style="width: 74%; margin-bottom: 10px;">CONSULTAR ARQUIVO INATIVO ESCOLAR</a>
+        </div>
+            <center>
+        <div class="google-search-container">
+            <form action="https://www.google.com/search" method="GET" target="_blank">
+                <input type="text" name="q" placeholder="Pesquisar no Google..." required>
+                <input type="submit" value="Pesquisar">
+            </form>
+        </div></center>
+
+        <div id="cards">
+            <a href="https://e-docs.es.gov.br/Internal" target="_blank"><img src="00. IDENTIDADE VISUAL/EDITADOS/Portal/edocs.png"> </a>
+            <a href="https://seges.sedu.es.gov.br/" target="_blank"><img src="00. IDENTIDADE VISUAL/EDITADOS/Portal/seges.png"> </a>
+            <a href="https://sistemapresenca.inep.gov.br/" target="_blank"><img src="00. IDENTIDADE VISUAL/EDITADOS/Portal/sistemapresenca.png"> </a>
+            <a href="https://censobasico.inep.gov.br/censobasico/#/" target="_blank"><img src="00. IDENTIDADE VISUAL/EDITADOS/Portal/educacenso.jpg"></a><br/>
+            <a href="http://atendimento.sedu.es.gov.br/" target="_blank"><img src="00. IDENTIDADE VISUAL/EDITADOS/Portal/glpi.png"> </a>
+            <a href="https://remotoapp.es.gov.br/RDWeb/webclient/index.html" target="_blank"><img src="00. IDENTIDADE VISUAL/EDITADOS/Portal/siarhes.png"> </a>
+            <a href="https://sispddeinterativo.mec.gov.br/" target="_blank"><img src="00. IDENTIDADE VISUAL/EDITADOS/Portal/pdde.png"> </a>
+            <a href="https://joseteixeirafialho.blogspot.com/p/prestacaodecontas.html" target="_blank"><img src="00. IDENTIDADE VISUAL/EDITADOS/Portal/prestacaodecontas.png"> </a>
+        </div>
+    </div>
+</body>
